@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>受信指示一覧</title>
+    <link rel="stylesheet" href="receive.css">
+    <script>var process = { browser: true };</script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1548.0/aws-sdk.min.js"></script>    
+    <script src="./aws-iot-sdk-browser.bundle.js"></script></head>
+<body>
+
+    <h1>デジタル研修</h1>
+    <br><br>
+    <div class="header">
+        <h2>Receive Notes</h2>
+    </div>
+
+    <!-- cardを表示するdiv -->
+    <div id="results"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="message.js"></script>
+    <script type="module" src="receive.js"></script>
+</body>
+</html>

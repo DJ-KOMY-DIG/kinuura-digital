@@ -1,0 +1,234 @@
+/* 共通設定 */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 20px;
+    /* background-color: #f4f7f6; */
+    background-color: #ffe9d6;
+    color: #333;
+    text-align: center;
+}
+
+/* 講師ページのヘッダー整列用 */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    color:blue;
+}
+
+/* リセットボタン（赤色） */
+button.danger-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #dc3545; /* 赤 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+button.danger-btn:hover {
+    background-color: #bd2130;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"] {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; 
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* inputタグとtextareaタグ共通のデザイン */
+input[type="text"],
+textarea {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; 
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit; /* フォントを親に合わせる */
+}
+
+/* コマンド入力エリア固有の設定 */
+textarea#inputCommand {
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    height: 150px;       /* 高さを指定 */
+    resize: vertical;    /* 縦方向だけサイズ変更可能にする */
+    line-height: 1.5;    /* 行間を少し広げて可読性UP */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+input#inputCommand {
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+
+button#sendBtn {
+    font-size: 18px;
+    padding: 12px 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,123,255,0.2);
+    transition: transform 0.1s;
+}
+
+button#sendBtn:active {
+    transform: scale(0.98);
+}
+
+#results { 
+    display: flex; 
+    /* flex-wrap: wrap;  横に並ぶ */
+    flex-direction: column; /* 縦に並ぶ */
+    gap: 15px; 
+    justify-content: center; 
+    align-items: center;    /* 中央揃え */
+    /* align-items: flex-start; 左揃え */
+    margin-top: 30px; 
+}
+
+.card {
+    position: relative; /* ボタンの配置基準 */
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    min-width: 120px;
+    text-align: center;
+    /* text-align: left; */
+    animation: slideIn 0.4s ease-out;
+    border-left: 5px solid #007bff;
+    margin-bottom: 10px; /* カード同士の間隔用 */
+}
+
+/* コピーボタンのスタイル */
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;    /* テキストより手前に表示させる */
+
+    /* ボタンのサイズと背景 */
+    background-color: transparent; /* 背景は透明に（アイコンだけ浮かぶように） */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px; /* アイコン周りの余白 */
+    
+    /* アイコンの色 */
+    color: #888;
+    transition: color 0.2s, transform 0.1s;
+    
+    /* Flexboxでアイコンを中央揃え */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background-color: rgba(0,0,0,0.05); /* ホバー時にうっすらグレーに */
+    color: #333; /* アイコンを濃く */
+}
+
+.copy-btn:active {
+    transform: scale(0.95); /* クリック時に少し凹む演出 */
+}
+
+/* SVGアイコンのサイズ設定 */
+.copy-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* 文字色(color)をSVGの塗りに適用 */
+}
+
+/* ツールチップの共通設定 */
+.copy-btn::after {
+    content: attr(data-tooltip); /* HTMLの data-tooltip 属性の中身を表示 */
+    
+    position: absolute;
+    bottom: 100%;       /* ボタンの「上」に表示（下なら top: 100%） */
+    left: 50%;
+    transform: translateX(-50%); /* 中央揃え */
+    margin-bottom: 5px; /* ボタンとの隙間 */
+    
+    padding: 5px 8px;
+    background-color: #333; /* 黒背景 */
+    color: #fff;            /* 白文字 */
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;    /* 改行させない */
+    opacity: 0;             /* 最初は隠す */
+    visibility: hidden;
+    transition: opacity 0.2s;
+    pointer-events: none;   /* ツールチップ自体はクリック判定させない */
+}
+
+/* ホバー時にツールチップを表示 */
+.copy-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-name {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: left;
+    padding-right: 30px; /* ボタンと被らないように右側に余白を作る */
+}
+
+.card-cmd {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    word-break: break-all; 
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

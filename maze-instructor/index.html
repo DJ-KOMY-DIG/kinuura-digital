@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>受信指示一覧</title>
+    <link rel="stylesheet" href="sendcommand.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1550.0.min.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+    <h1>プログラミング基礎研修</h1>
+    <br><br>
+    <div class="header">
+        <h2>指示受信</h2>
+        <button id="resetBtn" class="danger-btn">リセット</button>
+    </div>
+
+    <!-- cardを表示するdiv -->
+    <div id="results"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="message.js"></script>
+    <script type="module" src="sendcommand.js"></script>
+
+</body>
+</html>

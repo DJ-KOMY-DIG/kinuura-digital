@@ -1,0 +1,44 @@
+body {
+  margin: 50px;
+  background-image: url(background.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: Arial;
+  color:blanchedalmond;
+}
+
+i {
+  color:gold;
+}
+
+h2 {
+  color:chartreuse;
+}
+
+#item {
+  margin: 50px;
+}
+
+table {
+  margin: 50px;
+  font: bold;
+  font-size: x-large;
+  font-family: Arial;
+  color:darkturquoise;
+}
+
+table th, table td {
+  /*padding-top: 15px;    上余白 */
+  padding-bottom: 15px; /* 下余白 */
+}
+
+a:link {
+color:aqua;
+}
+
+a:visited {
+color:cadetblue;
+}

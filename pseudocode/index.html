@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudocode Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsplumb@2.15.6/dist/js/jsplumb.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="header-content">
+        <strong>デジタル研修 疑似コード Editor</strong>
+    </div>
+</header>
+
+<main>
+    <div id="toolbox">
+        <p class="toolbox-title">ツールボックス</p>
+        <p class="toolbox-subtitle">
+            配置：ドラッグして配置
+            <br>
+            文字編集：ダブルクリック
+            <br>
+            削除：右クリック  
+        </p>
+
+        <p class="tool-group-label">◇ コメント</p>
+        <div class="tool cat-comment" draggable="true" data-type="comment" data-label="// コメント">// コメント</div>        
+
+        <p class="tool-group-label">◇ 入出力</p>
+        <div class="tool-row">
+            <div class="tool cat-io" draggable="true" data-type="io" data-label="入力">入力</div>
+            <div class="tool cat-io" draggable="true" data-type="io" data-label="出力">出力</div>
+        </div>
+
+        <p class="tool-group-label">◇ 変数・値</p>
+        <div class="tool cat-value" draggable="true" data-type="value" data-label="変数・値">変数・値</div>
+
+        <p class="tool-group-label">
+            ◇ 代入・算術演算子
+            <br>
+            代入[=]
+            <br>
+            加算[+] 減算[-] 乗算[*] 除算[/]
+        </p>
+
+        <div class="tool cat-process" draggable="true" data-type="process" data-label="+">+</div>
+
+        <p class="tool-group-label">
+            ◇ 比較演算子
+            <br>
+            等しい[==] 等しくない[!=]
+            <br>
+            より小さい[<] 以下[<=] 
+            <br>
+            より大きい[>] 以上[>=]
+        </p>
+
+        <div class="tool cat-comparison-operators" draggable="true" data-type="comparison-operators" data-label="==">==</div>
+
+        <p class="tool-group-label">
+            ◇ 論理演算子
+            <br>
+            かつ[&&] または[||] 否定[!]
+        </p>
+        <div class="tool cat-logical-operators" draggable="true" data-type="logical-operators" data-label="&&">&&</div>
+
+        <p class="tool-group-label">◇ 条件分岐</p>
+        <div class="tool cat-condition" draggable="true" data-type="condition" data-label="もし">もし</div>
+        <div class="tool cat-condition2" draggable="true" data-type="condition2" data-label="そうでなければ">そうでなければ</div>
+
+    </div>
+
+    <div id="canvas"></div>
+
+</main>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
+

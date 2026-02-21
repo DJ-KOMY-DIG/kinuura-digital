@@ -1,0 +1,101 @@
+/* 共通設定 */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 20px;
+    background-color: #ffe9d6;
+    color: #333;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    color:blue;
+}
+
+/* 送信ボタン */
+button#sendBtn {
+    font-size: 18px;
+    padding: 12px 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,123,255,0.2);
+    transition: transform 0.1s;
+}
+
+button#sendBtn:active {
+    transform: scale(0.98);
+}
+
+button#sendBtn:hover {
+    background-color: #060eb0;
+}
+
+/* リセットボタン（赤色） */
+button.danger-btn {
+    font-size: 18px;
+    padding: 12px 40px;
+    cursor: pointer;
+    background-color: #dc3545; /* 赤 */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,123,255,0.2);
+    transition: transform 0.1s;
+}
+
+button.danger-btn:hover {
+    background-color: #48030a;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    /* ★親要素の幅を500pxにする（これが基準になる） */
+    width: 100%;       
+    max-width: 500px; 
+}
+
+/* 入力エリア固有の設定 */
+textarea#inputNotes {
+    letter-spacing: 2px;
+    height: 500px;
+    /* width: 500px;  ← ★固定幅を削除（またはコメントアウト） */
+    width: 100%;   /* ← ★親要素に合わせて伸縮させる */
+    resize: both;
+}
+
+/* inputタグとtextareaタグ共通のデザイン */
+input[type="text"],
+textarea {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; 
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit; /* フォントを親に合わせる */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

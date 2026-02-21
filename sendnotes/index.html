@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Notes</title>
+    <link rel="stylesheet" href="sendnotes.css">
+    <script>var process = { browser: true };</script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1548.0/aws-sdk.min.js"></script>    
+    <script src="https://raw.githack.com/aws/aws-iot-device-sdk-js/master/browser/bundle.js"></script>    
+    <script type="module" src="sendnotes.js"></script>
+
+<body>
+    <h1>デジタル研修</h1>
+    <br><br>
+    <h2>Send Notes</h2>
+    <br>
+    <div class="input-group">
+        <textarea id="inputNotes" placeholder="Enter your notes..." rows="20"></textarea>
+    </div>
+    
+    <button id="sendBtn">送信</button>
+    <!-- <button id="resetBtn" class="danger-btn">リセット</button> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="message.js"></script>
+</body>
+</html>

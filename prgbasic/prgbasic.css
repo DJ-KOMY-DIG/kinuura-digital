@@ -1,0 +1,57 @@
+body {
+  margin: 50px;
+  background-color: rgb(91, 91, 236);
+  background-image: url(background.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.container {
+  display: flex; /* 横並びにする */
+  align-items: center; /* 天地中央に配置 */
+  justify-content: center; /* 横方向中央に配置 */
+}
+
+#logo {
+  margin-right: 20px; /* 画像とテキストの間に余白 */
+}
+
+h1 {
+  font-family: Arial;
+  color:blanchedalmond;
+}
+
+i {
+  color:gold;
+}
+
+h2 {
+  color:rgb(255, 251, 0);
+}
+
+#item {
+  margin: 50px;
+}
+
+table {
+  margin:auto;
+  font: bold;
+  font-size: x-large;
+  font-family: Arial;
+  color:rgb(255, 255, 255);
+  text-align: left;
+}
+
+table th, table td {
+  /*padding-top: 15px;    上余白 */
+  padding-bottom: 15px; /* 下余白 */
+}
+
+a:link {
+color:rgb(255, 255, 255);
+}
+
+a:visited {
+color:rgb(185, 251, 253);
+}
