@@ -36,8 +36,10 @@ AWS.config.credentials.refresh((err) => {
             iotdata.publish(params, (err, data) => {
                 if (err) {
                     console.error("送信失敗:", err);
+                    showAlert("Send Notes", "送信に失敗しました", "error");
                 } else {
                     // console.log("送信成功！:", noteVal);
+                    showAlert("Send Notes", "送信しました！", "success");
                     document.getElementById('inputNotes').value = "";
                 }
             });

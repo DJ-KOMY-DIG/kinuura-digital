@@ -58,12 +58,29 @@ AWS.config.credentials.refresh((err) => {
         const data = JSON.parse(payload.toString());
         if (!data.notes) return;
 
+        // --- ログが表示されない対策 ---
+        console.group("メッセージ処理");
+        console.log("受信データ:", data.notes);
+
         const card = document.createElement("div");
         card.className = "card";
 
         const noteContent = document.createElement("div");
         noteContent.className = "card-notes";
-        noteContent.textContent = data.notes;
+
+        // URLを抽出するための正規表現（httpまたはhttpsから始まる文字列）
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+        // 文字列をURLの部分で分割し、リンクとテキストを組み合わせてHTMLを作る
+        const linkedText = data.notes.replace(urlRegex, (url) => {
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">${url}</a>`;
+        });
+
+        console.log("変換後HTML:", linkedText);
+
+        // textContent ではなく innerHTML を使う（<a>タグを解釈させるため）
+        noteContent.innerHTML = linkedText;
+        console.log("innerHTML:", noteContent.innerHTML);
         card.appendChild(noteContent);
 
         const copyBtn = document.createElement('button');
